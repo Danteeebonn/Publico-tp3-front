@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Periódica</title>
+    <link rel="stylesheet" href="api.css">
+</head>
+<body>
+    <header class="filtros">
+        <!-- Buscador general -->
+        <input type="search" id="busqueda" placeholder="Buscar por nombre, símbolo, categoría...">
+        
+        <!-- Filtros específicos -->
+        <input type="number" id="filtroatomic_number" placeholder="Número atómico">
+        <input type="text" id="filtroname" placeholder="Nombre">
+        <input type="text" id="filtroSimbolo" placeholder="Símbolo">
+        
+        <select id="filtroCategoria">
+            <option value="">Todas las categorías</option>
+            <option value="nonmetal">No metal (nonmetal)</option>
+            <option value="noble_gas">Gas noble</option>
+            <option value="alkali_metal">Metal alcalino</option>
+            <option value="alkaline_earth_metal">Alcalinotérreo</option>
+            <option value="metalloid">Metaloide</option>
+            <option value="post-transition_metal">Metal post-transición</option>
+            <option value="transition_metal">Metal de transición</option>
+            <option value="lanthanide">Lantánido</option>
+            <option value="actinide">Actínido</option>
+        </select>
+
+        <select id="filtroBlock">
+            <option value="">Todos los bloques</option>
+            <option value="s">Bloque s</option>
+            <option value="p">Bloque p</option>
+            <option value="d">Bloque d</option>
+            <option value="f">Bloque f</option>
+        </select>
+
+        <select id="filtroStateAtRoomTemp">
+            <option value="">Todos los estados</option>
+            <option value="gas">Gas</option>
+            <option value="liquid">Líquido (liquid)</option>
+            <option value="solid">Sólido (solid)</option>
+        </select>
+
+        <input type="number" id="filtroPeriod" placeholder="Período (1-7)">
+        <input type="number" id="filtroGroupNumber" placeholder="Grupo (1-18)">
+        <input type="number" id="filtroDiscoveryYear" placeholder="Año de descubrimiento">
+
+        <p>Resultados: <span id="contadorCosas">0</span></p>
+    </header>
+
+    <main class="elemento-container" id="elementoContainer">
+        <!-- Contenido Dinámico -->
+    </main>
+
+    <footer class="addElement">
+        <h2>Agregar Elemento</h2>
+        <form class="formulario" id="agregarElementoForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" placeholder="Ej: Hydrogen" required>
+            <br>
+            <label for="symbol">Símbolo:</label>
+            <input type="text" id="symbol" placeholder="Ej: H" required>
+            <br>
+            <label for="atomic_number">Número atómico:</label>
+            <input type="number" id="atomic_number" placeholder="Ej: 1" required>
+            <br>
+            <label for="atomic_mass">Masa atómica:</label>
+            <input type="number" step="any" id="atomic_mass" placeholder="Ej: 1.008" required>
+            <br>
+            <label for="category">Categoría:</label>
+            <input type="text" id="category" placeholder="Ej: nonmetal" required>
+            <br>
+            <label for="block">Bloque:</label>
+            <input type="text" id="block" placeholder="Ej: s" required>
+            <br>
+            <label for="group_number">Grupo:</label>
+            <input type="number" id="group_number" placeholder="Ej: 1" required>
+            <br>
+            <label for="period">Período:</label>
+            <input type="number" id="period" placeholder="Ej: 1" required>
+            <br>
+            <label for="state_at_room_temp">Estado a temp. ambiente:</label>
+            <input type="text" id="state_at_room_temp" placeholder="Ej: gas" required>
+            <br>
+            <label for="discovery_year">Año de descubrimiento:</label>
+            <input type="number" id="discovery_year" placeholder="Ej: 1766" required>
+            <br>
+            <button type="submit" id="agregarCosaBtn">Agregar</button>
+        </form>
+    </footer>
+
+    <script type="module" src="api.js"></script>
+</body>
+</html>
